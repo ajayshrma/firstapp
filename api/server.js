@@ -7,7 +7,7 @@ server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 
 server.get("/api/hello", (req, res) => {
-  res.status(200).send("Hello Ajay");
+  res.status(200).send("Hello vijay");
 });
 
 server.listen(PORT, () => console.log(`listening on port ${PORT}`));
