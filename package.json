@@ -13,8 +13,9 @@
     "web-vitals": "^2.1.4"
   },
   "proxy": "http://localhost:5000/",
-  "scripts": {
-    "start": "run-p start:**",
+  
+"scripts": {
+"start": "run-p start:**",
 "start:app": "react-scripts start",
 "start:server": "cd api && npm start",
 "build": "react-scripts build",
