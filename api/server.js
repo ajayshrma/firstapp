@@ -17,7 +17,7 @@ connectDB()
        
         server.get("/api/hello", (req, res) => {
           res.status(200).send("Hello vijay");
-          console.log(res);
+
         });
 
         server.listen(PORT, () => console.log(`listening on port ${PORT}`));
