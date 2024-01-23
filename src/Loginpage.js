@@ -29,9 +29,9 @@ const Loginpage = () => {
     };
 
     try {
-      const apiUrl = 'http://localhost:5000';
+      
       // Send the data to the backend for creating seats
-      const response = await fetch(`${apiUrl}/api/createSeats`, {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/createSeats`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

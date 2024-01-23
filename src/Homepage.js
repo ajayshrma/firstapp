@@ -2,8 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
 
-
-
 const Homepage = () => {
   const [seats, setSeats] = useState([]);
 
@@ -11,11 +9,10 @@ const Homepage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      
       try {
-        const apiUrl = 'http://localhost:5000';
-
-        const response = await fetch(`${apiUrl}/api/getSeats`);
+        const response = await fetch(
+          `${process.env.REACT_APP_BACKEND_API_URL}/getSeats`
+        );
 
         if (response.ok) {
           const seatsData = await response.json();
@@ -42,23 +39,26 @@ const Homepage = () => {
   };
 
   const handleViewButtonClick = (seat) => {
-    const startDate = seat.assignedTo.startDate ? new Date(seat.assignedTo.startDate) : null;
-    const endDate = seat.assignedTo.endDate ? new Date(seat.assignedTo.endDate) : null;
-  
+    const startDate = seat.assignedTo.startDate
+      ? new Date(seat.assignedTo.startDate)
+      : null;
+    const endDate = seat.assignedTo.endDate
+      ? new Date(seat.assignedTo.endDate)
+      : null;
+
     const userDetails = `
       Name: ${seat.assignedTo.userName}
       Number: ${seat.assignedTo.userNumber}
-      Start Date: ${startDate ? formatDate(startDate) : 'N/A'}
-      End Date: ${endDate ? formatDate(endDate) : 'N/A'}
+      Start Date: ${startDate ? formatDate(startDate) : "N/A"}
+      End Date: ${endDate ? formatDate(endDate) : "N/A"}
     `;
-  
+
     alert(userDetails);
   };
-  
 
   const formatDate = (date) => {
-    const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-    return date.toLocaleDateString('en-US', options);
+    const options = { year: "numeric", month: "2-digit", day: "2-digit" };
+    return date.toLocaleDateString("en-US", options);
   };
 
   const displaySeats = () => {
@@ -66,8 +66,10 @@ const Homepage = () => {
       const isBooked = seat.isBooked;
       const isExpired = isSubscriptionExpired(seat.assignedTo.endDate);
 
-      const statusText = isBooked && isExpired ? 'Expired' : isBooked ? 'Booked' : 'Left';
-      const statusColor = isBooked && isExpired ? 'blue' : isBooked ? 'green' : 'red';
+      const statusText =
+        isBooked && isExpired ? "Expired" : isBooked ? "Booked" : "Left";
+      const statusColor =
+        isBooked && isExpired ? "blue" : isBooked ? "green" : "red";
 
       return (
         <tr key={index}>

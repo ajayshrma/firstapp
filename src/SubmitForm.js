@@ -23,8 +23,8 @@ const UserForm = () => {
     };
 
     try {
-      const apiUrl = 'http://localhost:5000';
-      const response = await fetch(`${apiUrl}/api/updateUser`, {
+    
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/updateUser`, {
         method: "POST ",
         headers: {
           "Content-Type": "application/json",
