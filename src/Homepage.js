@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
 
+
+
 const Homepage = () => {
   const [seats, setSeats] = useState([]);
 
@@ -9,8 +11,11 @@ const Homepage = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      
       try {
-        const response = await fetch("http://localhost:5000/api/getSeats");
+        const apiUrl = 'http://localhost:5000';
+
+        const response = await fetch(`${apiUrl}/api/getSeats`);
 
         if (response.ok) {
           const seatsData = await response.json();

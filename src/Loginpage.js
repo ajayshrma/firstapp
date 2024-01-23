@@ -7,7 +7,7 @@ const Loginpage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [totalSeats, setTotalSeats] = useState("");
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
 
   const handleLogin = () => {
     // Basic login logic (replace this with actual authentication logic)
@@ -29,24 +29,24 @@ const Loginpage = () => {
     };
 
     try {
+      const apiUrl = 'http://localhost:5000';
       // Send the data to the backend for creating seats
-      const response = await fetch('http://localhost:5000/api/createSeats', {
-        method: 'POST',
+      const response = await fetch(`${apiUrl}/api/createSeats`, {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(seatFormData),
       });
 
       if (response.ok) {
-        
         console.log(`Successfully created ${totalSeats} seats.`);
         alert(`Successfully created ${totalSeats} seats.`);
       } else {
         console.error("Failed to send data to the server");
       }
     } catch (error) {
-      console.error('Error sending data to the server:', error);
+      console.error("Error sending data to the server:", error);
     }
   };
 
@@ -79,7 +79,7 @@ const Loginpage = () => {
         </form>
       </div>
 
-     <div className="createSeatsForm">
+      <div className="createSeatsForm">
         <h2>Create Library Seats</h2>
         <label htmlFor="totalSeats">Enter the number of seats:</label>
         <input
@@ -93,15 +93,12 @@ const Loginpage = () => {
         <br />
         <button
           id="createButton"
-          style={{ backgroundColor: 'rgb(226, 42, 17)' }}
+          style={{ backgroundColor: "rgb(226, 42, 17)" }}
           onClick={handleCreateSeats}
         >
           Create Seats
         </button>
-      
-  
-
-    </div>
+      </div>
     </>
   );
 };

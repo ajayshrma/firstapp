@@ -1,20 +1,18 @@
-import React, { useState } from 'react';
-import './SubmitForm.css';
+import React, { useState } from "react";
+import "./SubmitForm.css";
 // import { useNavigate } from "react-router-dom";
 
-
 const UserForm = () => {
-  const [userName, setUserName] = useState('');
-  const [userNumber, setUserNumber] = useState('');
-  const [startDate, setStartDate] = useState('');
-  const [endDate, setEndDate] = useState('');
+  const [userName, setUserName] = useState("");
+  const [userNumber, setUserNumber] = useState("");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   // const navigate = useNavigate();
-
-
+ 
 
   const handleSubmit = async () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const seatId = urlParams.get('seatId');
+    const seatId = urlParams.get("seatId");
 
     const userFormData = {
       userName,
@@ -25,28 +23,27 @@ const UserForm = () => {
     };
 
     try {
-      const response = await fetch('http://localhost:5000/api/updateUser', {
-        method: 'POST',
+      const apiUrl = 'http://localhost:5000';
+      const response = await fetch(`${apiUrl}/api/updateUser`, {
+        method: "POST ",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(userFormData),
       });
 
       if (response.ok) {
-        console.log('User form submitted successfully.');
-  
+        console.log("User form submitted successfully.");
+
         // navigate("/homepage");
 
-        window.alert('User Added'); // Show an alert
-        window.location.href = '/homepage'; // Navigate to /homepage
-
-
+        window.alert("User Added"); // Show an alert
+        window.location.href = "/homepage"; // Navigate to /homepage
       } else {
-        console.error('Failed to submit user form.');
+        console.error("Failed to submit user form.");
       }
     } catch (error) {
-      console.error('Error submitting user form:', error);
+      console.error("Error submitting user form:", error);
     }
   };
 
