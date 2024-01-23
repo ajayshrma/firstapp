@@ -1,3 +1,3 @@
-const DB_NAME = "videotube"
-
-export default DB_NAME
+// constant.js
+const DB_NAME = "LibraryManagement";
+export default DB_NAME;

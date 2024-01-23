@@ -1,15 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import Loginpage from "./Loginpage";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Homepage from "./Homepage";
+import SubmitForm from "./SubmitForm"; // Import SubmitForm component
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <App/>
-  </React.StrictMode>
+    <Router>
+      <Routes>
+        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/" element={<Loginpage />} />
+        <Route path="/submitform" element={<SubmitForm />} /> {/* Add this line */}
+      </Routes>
+    </Router>
+  </React.StrictMode>,
 );
-
 
 reportWebVitals();

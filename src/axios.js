@@ -1,5 +1,5 @@
-import axios from "axios";  //imports axios
+import axios from "axios"; //imports axios
 const instance = axios.create({
- baseURL: "/",
+  baseURL: "/",
 });
-export default instance;  //exports the instance
+export default instance; //exports the instance

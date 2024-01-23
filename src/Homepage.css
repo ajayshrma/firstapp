@@ -1,0 +1,98 @@
+/* home.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.seats-list {
+  margin: 20px;
+}
+
+.seats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.seats-table th, .seats-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.seats-table th {
+  background-color: #f2f2f2;
+}
+
+.view-button, .edit-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.view-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.edit-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Updated styles for status "Expired" */
+.seats-table td[status="Expired"] {
+  color: blue;
+  font-weight: bold;
+}
+
+/* You can adjust the style based on your preference */
+/* home.css */
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.seats-list {
+  margin: 20px;
+}
+
+.seats-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.seats-table th, .seats-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.seats-table th {
+  background-color: #f2f2f2;
+}
+
+.view-button, .edit-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.view-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.edit-button {
+  background-color: #28a745;
+  color: #fff;
+}
+
+/* Updated styles for status "Expired" */
+.seats-table td[status="Expired"] {
+  color: blue;
+  font-weight: bold;
+}
+
+/* You can adjust the style based on your preference */
