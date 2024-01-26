@@ -8,7 +8,6 @@ const UserForm = () => {
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   // const navigate = useNavigate();
- 
 
   const handleSubmit = async () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -23,8 +22,7 @@ const UserForm = () => {
     };
 
     try {
-    
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_API_URL}/updateUser`, {
+      const response = await fetch(`/updateUser`, {
         method: "POST ",
         headers: {
           "Content-Type": "application/json",

@@ -10,9 +10,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `${process.env.REACT_APP_BACKEND_API_URL}/getSeats`
-        );
+        const response = await fetch(`/getSeats`);
 
         if (response.ok) {
           const seatsData = await response.json();
