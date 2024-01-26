@@ -22,7 +22,7 @@ const UserForm = () => {
     };
 
     try {
-      const response = await fetch(`/updateUser`, {
+      const response = await fetch(`/api/updateUser`, {
         method: "POST ",
         headers: {
           "Content-Type": "application/json",

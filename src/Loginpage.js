@@ -30,7 +30,7 @@ const Loginpage = () => {
 
     try {
       // Send the data to the backend for creating seats
-      const response = await fetch(`/createSeats`, {
+      const response = await fetch(`/api/createSeats`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

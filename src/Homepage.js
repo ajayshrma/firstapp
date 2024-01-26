@@ -10,7 +10,7 @@ const Homepage = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`/getSeats`);
+        const response = await fetch(`/api/getSeats`);
 
         if (response.ok) {
           const seatsData = await response.json();
