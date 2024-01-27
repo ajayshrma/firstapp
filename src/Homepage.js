@@ -1,3 +1,5 @@
+//homepage.js
+
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Homepage.css";
@@ -6,6 +8,7 @@ const Homepage = () => {
   const [seats, setSeats] = useState([]);
 
   const navigate = useNavigate();
+ 
 
   useEffect(() => {
     const fetchData = async () => {

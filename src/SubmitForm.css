@@ -1,6 +1,7 @@
 /* submitform.css */
 
 
+/* submitform.css */
 
 .form-container {
   text-align: center;
@@ -8,6 +9,9 @@
   padding: 20px;
   border: 1px solid #ccc;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Adjust the max-width as needed */
+  margin: auto; /* Center horizontally */
+  margin-top: 50px; /* Add margin-top for spacing from the top */
 }
 
 .form-container h2 {

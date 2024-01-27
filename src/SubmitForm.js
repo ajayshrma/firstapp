@@ -49,7 +49,7 @@ const UserForm = () => {
     <div className="form-container">
       <h2>User Global Form</h2>
       <form>
-        <label htmlFor="userName">User Name:</label>
+        <label htmlFor="userName">Enter Student Name:</label>
         <br />
         <input
           type="text"
@@ -60,7 +60,7 @@ const UserForm = () => {
           required
         />
         <br />
-        <label htmlFor="userNumber">User Number:</label>
+        <label htmlFor="userNumber">Enter Student Number:</label>
         <br />
         <input
           type="text"

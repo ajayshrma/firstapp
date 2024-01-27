@@ -6,7 +6,7 @@ import "./Loginpage.css";
 const Loginpage = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [totalSeats, setTotalSeats] = useState("");
+  // const [totalSeats, setTotalSeats] = useState("");
   const navigate = useNavigate();
 
   const handleLogin = () => {
@@ -22,32 +22,36 @@ const Loginpage = () => {
     }
   };
 
-  const handleCreateSeats = async () => {
-    // Construct the data object for creating seats
-    const seatFormData = {
-      totalSeats: parseInt(totalSeats),
-    };
-
-    try {
-      // Send the data to the backend for creating seats
-      const response = await fetch(`/api/createSeats`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(seatFormData),
-      });
-
-      if (response.ok) {
-        console.log(`Successfully created ${totalSeats} seats.`);
-        alert(`Successfully created ${totalSeats} seats.`);
-      } else {
-        console.error("Failed to send data to the server");
-      }
-    } catch (error) {
-      console.error("Error sending data to the server:", error);
-    }
+  const createseat = () => {
+    navigate("/createseats");
   };
+
+  // const handleCreateSeats = async () => {
+  //   // Construct the data object for creating seats
+  //   const seatFormData = {
+  //     totalSeats: parseInt(totalSeats),
+  //   };
+
+  //   try {
+  //     // Send the data to the backend for creating seats
+  //     const response = await fetch(`/api/createSeats`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify(seatFormData),
+  //     });
+
+  //     if (response.ok) {
+  //       console.log(`Successfully created ${totalSeats} seats.`);
+  //       alert(`Successfully created ${totalSeats} seats.`);
+  //     } else {
+  //       console.error("Failed to send data to the server");
+  //     }
+  //   } catch (error) {
+  //     console.error("Error sending data to the server:", error);
+  //   }
+  // };
 
   return (
     <>
@@ -78,7 +82,7 @@ const Loginpage = () => {
         </form>
       </div>
 
-      <div className="createSeatsForm">
+      {/* <div className="createSeatsForm">
         <h2>Create Library Seats</h2>
         <label htmlFor="totalSeats">Enter the number of seats:</label>
         <input
@@ -97,7 +101,21 @@ const Loginpage = () => {
         >
           Create Seats
         </button>
-      </div>
+      </div> */}
+
+     
+   <div className="createseatbtnn" >
+   <button 
+        id="clickOnbtn"
+        style={{ backgroundColor: "rgb(226, 42, 17)" }}
+        onClick={createseat}
+      >
+        Create Seats
+      </button>
+
+   </div>
+
+   
     </>
   );
 };
