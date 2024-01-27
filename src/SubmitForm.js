@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import "./SubmitForm.css";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const UserForm = () => {
   const [userName, setUserName] = useState("");
   const [userNumber, setUserNumber] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleSubmit = async () => {
     const urlParams = new URLSearchParams(window.location.search);
@@ -22,21 +22,23 @@ const UserForm = () => {
     };
 
     try {
-      const response = await fetch(`/api/updateUser`, {
-        method: "POST ",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userFormData),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_BACKEND_API_URL}/api/updateUser`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userFormData),
+        }
+      );
 
       if (response.ok) {
         console.log("User form submitted successfully.");
 
-        // navigate("/homepage");
-
         window.alert("User Added"); // Show an alert
-        window.location.href = "/homepage"; // Navigate to /homepage
+        // Navigate to /homepage
+        navigate("/homepage");
       } else {
         console.error("Failed to submit user form.");
       }
