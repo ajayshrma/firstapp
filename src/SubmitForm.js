@@ -22,16 +22,13 @@ const UserForm = () => {
     };
 
     try {
-      const response = await fetch(
-        `${process.env.REACT_APP_BACKEND_API_URL}/api/updateUser`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(userFormData),
-        }
-      );
+      const response = await fetch(`/api/updateUser`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userFormData),
+      });
 
       if (response.ok) {
         console.log("User form submitted successfully.");
